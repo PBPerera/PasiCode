@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBlog SignIn</title>
+    <style>
+        body {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-image: url(img/image3.png);
+            background-position: center;
+            background-size: cover;
+            height:600px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: larger;
+           
+        }
+
+        .signin-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            height: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #010d62;
+            font-weight: bold;
+        }
+
+        .SignInform-group {
+            margin-bottom: 15px;
+        }
+        .SignInform-group1{
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #010d62;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            border: 2px solid #010d62;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #010d62;
+            outline : none;
+        }
+
+        button {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            font-size: large;
+            background-color: #010d62;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #000000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="signin-form">
+        <h2>Sign In</h2>
+        <form action="booking.html" method="post">
+            <div class="SignInform-group">
+                <label for="name">User Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="SignInform-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="signin">
+                <a href="ChangePassword.html" target="_blank">Change Password</a><br>
+                <a href="ForgetPassword.html" target="_blank">Forget Password</a>
+            </div>
+            <br>
+
+            
+
+            <div class="SignInform-group1">
+                <button type="submit">Sign In</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+         body{
+            background-image: url(img/image4.png);
+            background-position: center;
+            background-size: cover;
+            height: 1000px;
+            align-items: center;
+            background-attachment: fixed;
+            font-size: larger;
+            margin: 0px;
+            padding: 0px;
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        nav {
+            background-color:none;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-end;
+            
+        }
+
+        .logo{
+            cursor: pointer;
+            float:left;
+            
+        }
+        nav a {
+           
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bolder;
+            margin: 10px;
+        }
+
+        nav a:hover {
+            background-color: #bd1d57;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+
+        .signup a{
+            text-decoration: none;
+            color:#ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius:12px;
+            padding: 12px 30px;
+            border: 3px solid  #ffffff;
+            margin: 10px;
+        }
+        .signup a:hover{
+            background-color: #bd1d57;
+            transition: 0.6s;
+        }
+
+        .signin a{
+            text-decoration: none;
+            color:#ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius:12px;
+            padding: 12px 30px;
+            border: 3px solid  #ffffff;
+            margin: 10px;
+        }
+        .signin a:hover{
+            background-color: #bd1d57;
+            transition: 0.6s;
+        }
+        .book a{
+            text-decoration: none;
+            color:#ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius:12px;
+            padding: 12px 30px;
+            border: 3px solid  #ffffff;
+            margin: 10px;
+        }
+        .book a:hover{
+            background-color: #bd1d57;
+            transition: 0.6s;
+        }
+
+        #content{
+            width: 100%;
+        }
+
+        #content .first{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+
+        .all_content{
+            text-align: center;
+        }
+
+        .para1{
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+
+       
+        .place{
+            text-align: center;
+        }  
+
+        .place img{
+            width:30%;
+            height:30% ;
+            border-radius: 30px;
+            transition: transform 0.7s ease;
+
+        }
+        .place img:hover{
+            transform: scale(1.2); 
+        }
+        .frame img{
+            border-radius: 10px;
+        }
+
+        .heading{
+            width: 90%;
+            margin: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .heading h1{
+            font-size: 85px;
+            color: #fff;
+        }
+        .heading h3{
+            font-size: 50px;
+           
+        }
+
+        .tours{
+            width: 70%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .place{
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+        }
+        .place h2{
+            color: #fff;
+            font-size: 35px;
+            letter-spacing: 2px;
+            border-radius: 10px;
+            padding: 10px 10px;
+            background-color:#010d62 ;
+        }
+        .place a{
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 12px;
+            padding: 12px 30px;
+            background-color: #fff;
+        }
+        .place a:hover{
+            background-color: #010d62;
+            color: #fff;
+            letter-spacing: 3px;
+            transition: 0.6s;
+        }
+        
+
+        h1{
+            text-align: center;
+            color: #010d62;
+        } 
+        h2{
+            text-align: center;
+        }
+        .gal{
+            text-align: center;
+            padding: 21px;
+        } 
+
+        .gal img{
+            width: 30%;
+            height: auto;
+            margin: 10px;
+            transition: transform 0.7s ease;
+        }
+        .gal img:hover{
+            transform: scale(1.2); 
+        }
+        .contact{
+            text-align: center;
+        }
+
+        footer{
+            background:#fff;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        footer a{
+            text-decoration: none;
+            color: #bd1d57;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 30px;
+            margin: 10px;
+        }
+        
+        #homeContent{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #aboutContent, #contactContent, #homeContent, #galleryContent {
+            
+            display: none;
+            
+        }
+
+        #aboutContent:target, #contactContent:target, #homeContent:target, #galleryContent:target {
+            display: block;
+            background-color: rgba(219, 213, 213, 0.5);
+            padding: 60px; 
+            margin: 50px; 
+            border-radius: 20px;
+            backdrop-filter: blur(1px);
+            background-attachment: fixed;
+            
+        }
+    </style>
+</head>
+<body>
+<!--Navigation Bar-->    
+<nav>
+    <img class="logo" src="img/img.png" width="70px" height="70px">
+    <a href="#homeContent">HOME</a>
+    <a href="#aboutContent">ABOUT</a>
+    <a href="#galleryContent">GALLERY</a>
+    <a href="#contactContent">CONTACT</a>
+    
+    <!--Sign Up Button-->
+    <div class="signup">
+        <a href="SignUp.html" target="_blank">Sign Up</a>
+    </div>
+    <div class="signin">
+        <a href="SignIn.html" target="_blank">Sign In</a>
+    </div>
+    <div class="book">
+        <a href="booking.html" target="_blank">Booking</a>
+    </div>
+
+    
+</nav>
+<!--Content-->
+<div id="content">
+    <div class="first">
+        <div class="heading">
+            <h1>Welcome to JourneJoy <br>Travel Blog!</h1>
+            <h3>How to strat your tarvel</h3>
+            <p class="para1">Embark on a journey a lifetime and explore the world's most breathtaking destination with our expert travel advice. From exotic beaches to cultural wonders we've got you covered with our comprehensive travel guides and insider tips.</p>
+            
+
+        </div>
+        <!--Page Home Content-->
+        <div class="tours" id="homeContent">
+            <div class="place">
+                <h2>PARIS</h2>
+            <img src="img/img1.png">
+            <p>Paris is the capital city of France. It is located in the northern part of France. Paris is the most populous city in France.It is built long a bend in the river Seine, between the confluence of the Marne and Oise Rivers.Paris is ranked as the second most visited city in the world. The best places to visit in Paris are the<b> Eiffel Tower, Kocuvre Museum, Notre Dame Cathedral, Place of Versaiiles, Disneyland, Sacre_Coeur, Seine,Luxembourg Garden, Palais Gariner.</b> </p>
+            <br><a href="https://en.wikipedia.org/wiki/Paris">More Information</a>
+            <a href="booking.html">Booking</a>
+            </div>
+            <div class="place">
+            <h2>ROME</h2>
+            <img src="img/img11.png">
+            <p>The highly admired Rome is one of the most memorable symols of our ancient history.One needs to consistently and patiently put the effort inro achieving something just as in the buliding process of the city of Rome. Rome city which is also wuite popularly known for the pretty park, beautiful garden, artsy statues which took a great deal of time and consistent effort to build. The best place to visit in Rome are the <b>Colosseum, Roman Forum, Trevi Fountain, Pantheon, St. Peter's Basilica, Vatican Museums</b>  </p>
+            <br><a href="https://en.wikipedia.org/wiki/Rome">More Information</a>
+            <a href="booking.html">Booking</a>
+            </div>
+            <div class="place">
+            <h2>LONDON</h2>
+            <img src="img/img21.png">
+            <p>London is the capital of England. It is very famous tourist destination. It is very famous for its history, vibrant local culture. It has tourist places like <b>Big Ben, London Eye, Buckingham Place</b> and many more. Landon is one of the most beautiful cities ever built. It is the fourth most expensive city in the world. Other best places to visit in London are <b>Royal Albert Hall, Hampton Court Place, Covent Garden, Natural History Museum, Tower Bridge, Hyde Park, Westminster Abbey</b> </p>
+            <br><a href="https://en.wikipedia.org/wiki/History_of_London">More Information</a>
+            <a href="booking.html">Booking</a>
+            </div>
+            <div class="place">
+                <h2>THE MALDIVES</h2>
+                <img src="img/img31.png">
+                <p>Maldives is an island nation located in the Indian Ocean. Comprising 26 atloos, it consists of over 1,000 coral islands. Male, the capital, is one of the sammlest capital cities globally. The Maldives is known for its stunning white-sand beaches and vibrant coral reefs. Tourism is a major industry, attracting visitors with its luxury resortd and underwater activities. The best place to visit in Maldives are <b>Overwater Bungalows, Maldives Baeches, snorkrling, Hanifaru Bay, Maafushi, Maldivian Resorts, North Male Atoll, Water Sport</b></p>
+                <br><a href="https://en.wikipedia.org/wiki/History_of_the_Maldives">More Information</a>
+                <a href="booking.html">Booking</a>
+            </div>
+            <div class="place">
+                <h2>NEW YORK CITY</h2>
+                <img src="img/img41.png">
+                <p>New York City is the most populated city in the United States. More than eight million people live in New York City. It is nicknamed the <b>Big Apple</b>. New York City has over five thousand skyscrapers, which is more than any other city of the world. New York City has lot of beautiful places. They are attract tourist. The best place to visit in New York City are <b>Central Park, Statue of Liberty, Ellis Island, Brooklyn Birdge, Washington Square Park, Grand Centrak Terminal, Bryant Park, Staten Island Ferry, Museum of Modern Art, American Museum of Natural History, Apollp Theater, Metropolitan Opera House, Rockefeller Center.</b></p>
+                <br><a href="https://en.wikipedia.org/wiki/New_York_City">More Information</a>
+                <a href="booking.html">Booking</a>
+            </div>
+        </div>   
+    </div>
+
+    </div>
+    
+    
+
+    <!--Page About Content-->
+    <div class="about" id="aboutContent">
+        <h1>About Our travel Blog</h1>
+        <p>Welcome to our travel blog, where wanderlust meets storytelling. Our passion for travel drives us to explore the world's most captivating destinations and share our experiences with fellow adventurers like you.</p>
+        <h2>Our Mission</h2>
+        <P>Our mission is to inspire and empower travelers to embark on meaningful journeys, connect with diverse cultures, and create lasting memories. Through vivid narratives, stunning photography, and practical tips, we aim to make travel accessible and enriching for everyone.</P>
+        <h2>What We Offer for You</h2>
+        <p>At our travel blog, you'll find inspiring travel stories and destination guides, practical travel tips and advice, reviews of accommodations, restaurants, and attractions, insights into local cultures and traditions, and travel photography that captures the beauty of the world.</p>
+        <h2>Meet or Contact Our Team</h2>
+        <p>We are a team of passionate travelers, writers, photographers, and explorers who share a deep love for adventure and discovery. Get to know our team members and their travel stories.</p>
+        <h2>Join Our Community</h2>
+        <p>We invite you to join our community of travel enthusiasts! Follow us on social media, subscribe to our newsletter, and embark on a journey of exploration and discovery with us.</p>
+        <h1>Happy Travels!</h1>
+    </div>
+    <!--Page Gallery Content-->
+    <div class="about" id="galleryContent">
+        <h1>Explore Our Gallery</h1>
+        <p class="para1">Explore amazing pictures and visual narratives curated from our global trips. Our exhibition highlights the diversity and beauty of our world with images ranging from tranquil landscapes to colorful cityscapes.</p>
+        
+        <div class="gal">
+            <h2>Paris</h2>
+             <img src="img/img2.png">
+             <img src="img/img3.png">
+             <img src="img/img4.png">
+             <img src="img/img5.png">
+             <img src="img/img6.png">
+             <img src="img/img7.png">
+             <img src="img/img8.png">
+             <img src="img/img9.png">
+             <img src="img/img10.png">
+             <img src="img/img1.png">
+             <h2>Rome</h2>
+             <img src="img/img11.png">
+             <img src="img/img13.png">
+             <img src="img/img14.png">
+             <img src="img/img15.png">
+             <img src="img/img16.png">
+             <img src="img/img17.png">
+             <img src="img/img18.png">
+             <img src="img/img19.png">
+             <img src="img/img20.png">
+             <img src="img/img12.png">
+             <h2>London</h2>
+             <img src="img/img22.png">
+             <img src="img/img23.png">
+             <img src="img/img24.png">
+             <img src="img/img25.png">
+             <img src="img/img26.png">
+             <img src="img/img27.png">
+             <img src="img/img28.png">
+             <img src="img/img29.png">
+             <img src="img/img30.png">
+             <img src="img/img21.png">
+             <h2>The Maldives</h2>
+             <img src="img/img32.png">
+             <img src="img/img33.png">
+             <img src="img/img34.png">
+             <img src="img/img35.png">
+             <img src="img/img36.png">
+             <img src="img/img37.png">
+             <img src="img/img38.png">
+             <img src="img/img39.png">
+             <img src="img/img40.png">
+             <img src="img/img31.png">
+             <h2>New York City</h2>
+             <img src="img/img42.png">
+             <img src="img/img43.png">
+             <img src="img/img44.png">
+             <img src="img/img45.png">
+             <img src="img/img46.png">
+             <img src="img/img47.png">
+             <img src="img/img48.png">
+             <img src="img/img49.png">
+             <img src="img/img50.png">
+             <img src="img/img41.png">
+
+        
+        </div>
+        
+    </div>
+    <!--Page Contact Content-->
+    <div class="contact" id="contactContent">
+        <h1>Contact Us</h1>
+        <p>If you have a question, suggestion, or wish to share your travel experience with us about our travel blog, you can contact us using the contact details below.</p>
+
+        <h2>Email:</h2>
+        <p>Send us a message via the email address <br><b>journejoy@travelblog.com</b> <br>Then we will contact you as soon as possible. We welcome your contributions.</p>
+        
+        <h2>Social Media:</h2>
+        <p>Stay connected via our social media for the latest updates, travel inspiration and exclusive content:</p>
+        <b>
+        Facebook: JourneJoytravelblog
+        <br>Twitter: @JourneJoy
+        <br>Instagram: @JourneJoy
+        </b>
+        
+        
+        <h2>Feedback:</h2>
+        <p>We value your feedback and strive to improve your experience on our blog. Please do not hesitate to let us know if you have any suggestions, comments or concerns. Your comments will help us create a better blog. We can also improve our services for you.</p>
+        
+        <h1>Thank you for joining us!</h1>
+    </div>
+    <!--Footer-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookies</a>
+        <a href="#">Complaints</a>
+
+    </footer>
+</div>
+
+</body>
+</html>
